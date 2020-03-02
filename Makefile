@@ -1,11 +1,25 @@
 #!/usr/bin/env make -f
 
-IMAGE = allanj92/didomi-data-challenge:latest
 
 current_dir := $(abspath $(dir $(lastword $(MAKEFILE_LIST))))
+IMAGE = allanj92/didomi-data-challenge:latest
+DOCKER_RUN = docker run --rm -it -v $(current_dir):/app
 
 
 build:
-	docker build -f .docker/Dockerfile -t $(IMAGE) .
+	docker build -t $(IMAGE) .
+
+run:
+	$(DOCKER_RUN) $(IMAGE)
+
 dev:
-	docker run -it -v $(current_dir):/app $(IMAGE)
+	$(DOCKER_RUN) $(IMAGE) pytest-watch
+
+coverage:
+	$(DOCKER_RUN) $(IMAGE) pytest --cov=spark_jobs tests/
+
+bash:
+	$(DOCKER_RUN) $(IMAGE) bash
+
+notebook:
+	$(DOCKER_RUN) -p 4040:4040 -p 8888:8888 $(IMAGE) jupyter notebook

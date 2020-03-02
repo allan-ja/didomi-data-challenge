@@ -1,4 +1,4 @@
-FROM python:3.7.6-slim-buster
+FROM jupyter/pyspark-notebook
 
 WORKDIR /app
 
@@ -6,4 +6,4 @@ COPY requirements.txt .
 
 RUN pip install -r requirements.txt
 
-CMD ["pytest-watch"]
+CMD [ "python", "challenge.py" ]

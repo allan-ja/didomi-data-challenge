@@ -1,2 +1,5 @@
+pyspark
+
 pytest
+pytest-cov
 pytest-watch
