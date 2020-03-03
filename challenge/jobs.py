@@ -4,7 +4,6 @@ from pyspark.sql import functions as F
 from .data_sources import DataSourceInterface
 
 
-
 class CountJob():
 
     def __init__(self, source: DataSourceInterface = None):

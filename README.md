@@ -23,6 +23,10 @@ make build
 
 Depending on your need, there are a few configured `make` options available. Don't hesitate to open more terminals if needed.
 
+To simply run the spark job:
+
+    make run
+
 To launch pytest-watch, so unit tests are run at every file saving:
 
     make dev
