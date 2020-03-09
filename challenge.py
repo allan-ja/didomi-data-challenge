@@ -1,7 +1,7 @@
 from pyspark.sql import SparkSession
 
-from spark_jobs.data_sources import JSONHiveDataSource
-from spark_jobs.jobs import CountJob
+from challenge.data_sources import JSONHiveDataSource
+from challenge.jobs import CountJob
 
 
 def main():

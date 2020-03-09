@@ -1,6 +1,6 @@
 # Didomi Data Challenge
 
-The repository is my answer of the Didomi Data Challenge.
+The repository is my answer to the Didomi Data Challenge.
 
 ## 0 - Requirements
 
